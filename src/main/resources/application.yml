@@ -1,0 +1,8 @@
+
+spring:
+    application:
+      name: study-project
+
+
+server:
+  port: 8090
