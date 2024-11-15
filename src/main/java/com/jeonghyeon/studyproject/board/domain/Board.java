@@ -1,12 +1,24 @@
 package com.jeonghyeon.studyproject.board.domain;
 
+import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.Optional;
 
+@Entity
+@Table(name = "T_BOARD")
 @Getter
+@NoArgsConstructor
 public class Board {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "board_id")
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
     private String title;
     private String content;
